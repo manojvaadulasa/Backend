@@ -17,7 +17,7 @@
                 "DELETE"
             ], 
             "headers": {
-                "Access-Control-Allow-Origin": "https://details-entry.vercel.app", 
+                "Access-Control-Allow-Origin": "https://manojvfullstackexample.in/*", 
                 "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE",
                 "Access-Control-Allow-Headers": "*", 
                 "Access-Control-Allow-Credentials": "true" 

@@ -48,7 +48,7 @@ router.get('/read', async (req, res) => {
         return res.status(404).json({ error: 'Details not found' });
       }
   
-      res.status(200).json(updatedDetails);
+      return res.status(200).json(updatedDetails);
     } catch (error) {
       console.error(error);
       res.status(500).json({ error: error.message });
@@ -66,8 +66,7 @@ router.delete('/delete/:id', async (req, res) => {
     if (!deletedDetails) {
       return res.status(404).json({ error: 'Details not found' });
     }
-
-    res.status(204).send();
+    return res.status(204).json({ success: 'Detail Added successfully' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: error.message });
