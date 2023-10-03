@@ -9,7 +9,21 @@ const connectDB = require('./Middleware/mongoose');
 
 connectDB();
 
-app.use(cors({ origin: '*' }));
+const allowedOrigins = ['https://www.manojvfullstackexample.in'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.use('/api/details', FormMain);
