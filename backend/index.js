@@ -11,7 +11,7 @@ connectDB();
 
 app.use(cors(
   {
-    origin: ["https://manojvfullstackexample.in/*"],
+    origin: ["https://manojvfullstackexample.in"],
     methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true
   }
