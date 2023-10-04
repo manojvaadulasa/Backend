@@ -23,6 +23,7 @@ function verifyAPI(req,res,next){
   if(!providedKey || providedKey!== process.env.API_KEY){
     return res.status(401).json({message: "Unauthorized access"});
   }
+  
   next();
 }
 app.get("/", (req, res) => {
