@@ -28,7 +28,7 @@ function verifyAPI(req,res,next){
 app.get("/", (req, res) => {
   res.json("Hello");
 })
-app.use('/api/details', FormMain);
+app.use('/api/details',verifyAPI, FormMain);
 
 app.listen(port, () => {
   console.log("Server is Running")
