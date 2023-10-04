@@ -19,11 +19,11 @@ app.use(express.json());
 
 app.use(helmet());
 function verifyAPI(req,res,next){
-  const providedKey = req.headers["ManojAPIKey"];
+  const providedKey = req.headers['x-api-key'];
   if(!providedKey || providedKey!== process.env.API_KEY){
     return res.status(401).json({message: "Unauthorized access"});
   }
-  
+
   next();
 }
 app.get("/", (req, res) => {
